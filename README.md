@@ -1,1 +1,1 @@
-# -sc-react-redux-test
+# sc-react-redux-test
