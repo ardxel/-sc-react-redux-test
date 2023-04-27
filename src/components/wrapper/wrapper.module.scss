@@ -1,0 +1,14 @@
+.main {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    border: 5px solid black;
+    min-height: 65vh;
+    min-height: 65vh;
+    box-shadow: 4px 4px 25px 20px rgba(0, 0, 0, 0.35);
+  }
+}
