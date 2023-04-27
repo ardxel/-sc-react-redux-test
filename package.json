@@ -1,0 +1,66 @@
+{
+  "name": "sc-react-redux-test",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "concurrently": "^8.0.1",
+    "cors": "^2.8.5",
+    "css-loader": "^6.7.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss": "^8.4.23",
+    "postcss-loader": "^7.2.4",
+    "postcss-preset-env": "^8.3.2",
+    "prettier": "2.8.8",
+    "react-highlight-within-textarea": "^3.1.1",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2",
+    "serve": "^14.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx webpack serve --mode development --config ./config/webpack.dev.js",
+    "build:prod": "npx webpack --mode production --config ./config/webpack.common.js",
+    "build:serve": "npm run build:prod && npx serve -s build",
+    "server": "node ./config/server.js",
+    "start": "concurrently \"npm run server\" \"npm run build:serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardxel/sc-react-redux-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ardxel/sc-react-redux-test/issues"
+  },
+  "homepage": "https://github.com/ardxel/sc-react-redux-test#readme",
+  "dependencies": {
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "body-parser": "^1.20.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.10.0"
+  }
+}
