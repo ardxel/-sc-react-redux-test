@@ -1,1 +1,1 @@
-# sc-react-redux-test
+# Text Editor
