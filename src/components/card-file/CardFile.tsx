@@ -40,7 +40,7 @@ const CardFile: React.FC<CardFileProps> = (props) => {
   return (
       <div className={styles.file}>
         {!showText && <div className={styles.background}></div>}
-        {!showText && <div className={styles.name}>{name}</div>}
+        {!showText && <div className={styles.name}>{name.replace('.txt', '')}</div>}
         <div className={styles.modified}>
           <span>{lastModified[0]}</span>
           <span>{lastModified[1]}</span>
