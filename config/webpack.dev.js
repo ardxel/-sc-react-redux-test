@@ -15,6 +15,7 @@ module.exports = (env,argv) => {
     devServer: {
       hot: true,
       port: 3000,
+      magicHtml: true,
       historyApiFallback: true,
       setupMiddlewares: (mw, devServer) => {
         devServer.app.use(cors())
