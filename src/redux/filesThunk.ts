@@ -13,6 +13,14 @@ import {
 } from "./apiModels";
 import {RootState, TypedDispatch} from "./store";
 
+const useExtension = (str) => {
+  if (str.includes('.txt')) {
+    return str;
+  } else {
+    return str + '.txt';
+  }
+}
+
 type BASE_URL = 'http://localhost:5000';
 
 const BASE_URL: BASE_URL = 'http://localhost:5000' as const;
@@ -41,7 +49,10 @@ export const getAllFiles = createAppAsyncThunk<ResponseAllFiles, RequestAllFiles
 export const getFile = createAppAsyncThunk<ResponseFile, RequestFile>(
     'files/getFile',
     async (filename: RequestFile) => {
-      const response = await fetch(`${BASE_URL}/getFile/${filename}`);
+      const response = await fetch(`${BASE_URL}/getFile/${filename}`, {
+        headers: _AppHeaders,
+        method: 'get'
+      });
 
       const data = await response.json();
 
@@ -75,7 +86,7 @@ export const createNewFile = createAppAsyncThunk<ResponseCreateNewFile, RequestC
 
       const response = await fetch(`${BASE_URL}/createNewFile`, {
         body: JSON.stringify({
-          "name": filename
+          "name": useExtension(filename)
         }),
         method: 'post',
         mode: 'cors',
