@@ -23,7 +23,6 @@ const EditFilePage: React.FC<EditFilePageProps> = () => {
 
   useEffect(() => {
     if (filename) {
-
       dispatch(getFile(filename))
     } else {
       navigate('/');
