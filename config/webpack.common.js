@@ -73,7 +73,8 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(PATH_SRC, 'index.html'),
-        filename: "index.html"
+        filename: "index.html",
+        publicPath: '/'
       }),
       new MiniCssExtractPlugin({
         ignoreOrder: true,
