@@ -5,7 +5,7 @@ function createNewFile(req, res, next) {
 
   const { name } = req.body;
 
-  const _dir = path.resolve(__dirname, '../../text_files/');
+  const _dir = path.resolve(__dirname, '../../text_files');
   const newFilePath = path.resolve(_dir, name);
 
   if (fs.existsSync(newFilePath)) {
@@ -27,7 +27,6 @@ function createNewFile(req, res, next) {
     created: stats.birthtime.toLocaleDateString()
   }
   res.status(200).send(file);
-
   next();
 }
 
