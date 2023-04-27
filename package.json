@@ -35,6 +35,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier:check": "npx prettier --check \"**\" ",
+    "prettier:fix": "npx prettier --write \"**\" ",
     "dev": "npx webpack serve --mode development --config ./config/webpack.dev.js",
     "build:prod": "npx webpack --mode production --config ./config/webpack.common.js",
     "build:serve": "npm run build:prod && npx serve -s build",
