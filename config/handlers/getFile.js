@@ -14,14 +14,13 @@ function getFile(req,res) {
   }
 
   const matchedFilename = files.find(file => file === filename)
-
+  console.log(matchedFilename);
   if (!matchedFilename) {
     res.send('this file was not found');
   }
-
   const stats = fs.statSync(`${_dir}/${filename}`);
+  console.log(stats);
   const fileText = fs.readFileSync(`${_dir}/${filename}`, {encoding: 'utf-8'})
-
   const file = {
     name: filename,
     text: fileText,
@@ -31,7 +30,6 @@ function getFile(req,res) {
     ],
     created: stats.birthtime.toLocaleDateString()
   }
-
   res.send(file);
 }
 
