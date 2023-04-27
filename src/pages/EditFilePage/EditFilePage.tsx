@@ -23,6 +23,7 @@ const EditFilePage: React.FC<EditFilePageProps> = () => {
 
   useEffect(() => {
     if (filename) {
+
       dispatch(getFile(filename))
     } else {
       navigate('/');
@@ -50,7 +51,7 @@ const EditFilePage: React.FC<EditFilePageProps> = () => {
   return (
       <Wrapper>
         <div className={styles.buttons}>
-          <span className={styles.name}>{file?.name}</span>
+          <span className={styles.name}>{file?.name!.replace('.txt', '')}</span>
           <IconButton className={styles.send} onClick={_handleSubmit}
                       title='confirm new changes'
                       sx={{display: (file?.text !== editText) ? 'inline-flex' : 'none'}}>
